@@ -1,7 +1,7 @@
 aid: cisco-directory-connectors
 url: >-
   https://raw.githubusercontent.com/api-evangelist/cisco-directory-connectors/refs/heads/main/apis.yml
-name: Cisco Directory Connectors API
+name: Cisco Directory Connectors
 tags:
   - Directory Services
   - Identity Management
