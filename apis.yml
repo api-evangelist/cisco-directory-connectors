@@ -3,10 +3,10 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/cisco-directory-connectors/refs/heads/main/apis.yml
 name: Cisco Directory Connectors
 tags:
+  - Active Directory
   - Directory Services
   - Identity Management
   - LDAP
-  - Active Directory
   - User Synchronization
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
