@@ -30,7 +30,7 @@ apis:
       - url: https://developer.cisco.com/docs/directory-connectors/
         type: Documentation
       - url: https://developer.cisco.com/docs/directory-connectors/#!getting-started
-        type: Getting Started
+        type: GettingStarted
       - url: https://developer.cisco.com/docs/directory-connectors/#!authentication
         type: Authentication
     description: >-
@@ -38,15 +38,15 @@ apis:
 common:
   - type: Portal
     url: https://developer.cisco.com
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/CiscoDevNet
   - type: Blog
     url: https://developer.cisco.com/blog
-  - type: Status
+  - type: StatusPage
     url: https://status.cisco.com
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://www.cisco.com/c/en/us/about/legal/cloud-and-software/end-user-license-agreement.html
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://www.cisco.com/c/en/us/about/legal/privacy-full.html
 maintainers:
   - FN: Kin Lane
