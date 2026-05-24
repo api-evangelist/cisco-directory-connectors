@@ -48,6 +48,8 @@ common:
     url: https://www.cisco.com/c/en/us/about/legal/cloud-and-software/end-user-license-agreement.html
   - type: PrivacyPolicy
     url: https://www.cisco.com/c/en/us/about/legal/privacy-full.html
+  - type: LLMsTxt
+    url: https://www.cisco.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
