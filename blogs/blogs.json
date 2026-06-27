@@ -3,16 +3,10 @@
   "feeds": [
     {
       "source": "https://developer.cisco.com/blog",
-      "error": "HTTPError"
-    },
-    {
-      "source": "https://github.com/CiscoDevNet",
-      "feed_url": "https://github.com/CiscoDevNet",
-      "title": "",
       "saved": 0,
-      "method": "none"
+      "error": "HTTP 404 Not Found"
     }
   ],
-  "fetched": "2026-06-14T20:42:17Z",
-  "post_count": 0
+  "post_count": 0,
+  "fetched": "2026-06-27T12:32:02Z"
 }
