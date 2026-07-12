@@ -36,6 +36,10 @@ apis:
     description: >-
       REST API for managing directory synchronization and user provisioning.
 common:
+  - type: DomainSecurity
+    url: security/cisco-directory-connectors-domain-security.yml
+  - type: Authentication
+    url: authentication/cisco-directory-connectors-authentication.yml
   - type: Portal
     url: https://developer.cisco.com
   - type: GitHubOrganization
