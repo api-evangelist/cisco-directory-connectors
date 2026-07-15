@@ -36,6 +36,8 @@ apis:
     description: >-
       REST API for managing directory synchronization and user provisioning.
 common:
+  - type: AgenticAccess
+    url: agentic-access/cisco-directory-connectors-agentic-access.yml
   - type: DomainSecurity
     url: security/cisco-directory-connectors-domain-security.yml
   - type: Authentication
