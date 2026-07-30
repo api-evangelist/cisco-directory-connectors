@@ -9,7 +9,20 @@ tags:
   - LDAP
   - User Synchronization
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cisco-directory-connectors.png
 access: 3rd-Party
 created: '2024-01-15'
 modified: '2026-03-16'
@@ -20,21 +33,38 @@ description: >-
   with Active Directory, LDAP, and other directory services to automate user
   provisioning and management.
 apis:
-  - aid: cisco-directory-connectors:cisco-directory-connector-api
-    name: Cisco Directory Connector API
-    tags:
-      - Directory
-      - Users
-    humanURL: https://developer.cisco.com/docs/directory-connectors/
-    properties:
-      - url: https://developer.cisco.com/docs/directory-connectors/
-        type: Documentation
-      - url: https://developer.cisco.com/docs/directory-connectors/#!getting-started
-        type: GettingStarted
-      - url: https://developer.cisco.com/docs/directory-connectors/#!authentication
-        type: Authentication
-    description: >-
-      REST API for managing directory synchronization and user provisioning.
+- aid: cisco-directory-connectors:cisco-directory-connector-api
+  name: Cisco Directory Connector API
+  tags:
+  - Directory
+  - Users
+  humanURL: https://developer.cisco.com/docs/directory-connectors/
+  properties:
+  - url: https://developer.cisco.com/docs/directory-connectors/
+    type: Documentation
+  - url: https://developer.cisco.com/docs/directory-connectors/#!getting-started
+    type: GettingStarted
+  - url: https://developer.cisco.com/docs/directory-connectors/#!authentication
+    type: Authentication
+  description: REST API for managing directory synchronization and user provisioning.
+- aid: cisco-directory-connectors:cisco-directory-connectors-groups-api
+  name: Cisco Directory Connectors Groups API
+  description: The Groups API from Cisco Directory Connectors — 2 operation(s) for groups.
+  humanURL: https://developer.cisco.com/docs/directory-connectors/
+  tags:
+  - Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/cisco-directory-connectors-groups-api-openapi.yml
+- aid: cisco-directory-connectors:cisco-directory-connectors-people-api
+  name: Cisco Directory Connectors People API
+  description: The People API from Cisco Directory Connectors — 2 operation(s) for people.
+  humanURL: https://developer.cisco.com/docs/directory-connectors/
+  tags:
+  - People
+  properties:
+  - type: OpenAPI
+    url: openapi/cisco-directory-connectors-people-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/cisco-directory-connectors-agentic-access.yml
