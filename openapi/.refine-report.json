@@ -1,0 +1,16 @@
+{
+  "provider": "cisco-directory-connectors",
+  "sources": [
+    "cisco-directory-connectors-groups-api-openapi.yml",
+    "cisco-directory-connectors-people-api-openapi.yml"
+  ],
+  "outputs": [
+    "cisco-directory-connectors-groups-api-openapi.yml",
+    "cisco-directory-connectors-people-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

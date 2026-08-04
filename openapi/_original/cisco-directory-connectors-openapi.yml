@@ -1,0 +1,199 @@
+openapi: 3.1.0
+info:
+  title: Cisco Directory Connectors API (via Webex People & Groups)
+  description: |
+    Cisco Directory Connectors synchronize Active Directory or LDAP user
+    and group data into Cisco Webex / Control Hub. Programmatic management
+    is performed through the Webex People and Groups REST APIs hosted at
+    webexapis.com/v1. Authentication uses OAuth 2.0 access tokens issued
+    by the Webex developer hub.
+  version: "1.0.0"
+  contact:
+    name: Cisco DevNet
+    url: https://developer.cisco.com/docs/directory-connectors/
+servers:
+  - url: https://webexapis.com/v1
+security:
+  - bearerAuth: []
+tags:
+  - name: People
+  - name: Groups
+paths:
+  /people:
+    get:
+      tags: [People]
+      summary: List synchronized people
+      operationId: listPeople
+      parameters:
+        - in: query
+          name: email
+          schema: { type: string, format: email }
+        - in: query
+          name: displayName
+          schema: { type: string }
+        - in: query
+          name: orgId
+          schema: { type: string }
+        - in: query
+          name: max
+          schema: { type: integer }
+      responses:
+        "200":
+          description: A list of people
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items: { $ref: "#/components/schemas/Person" }
+    post:
+      tags: [People]
+      summary: Create a person
+      operationId: createPerson
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/Person" }
+      responses:
+        "200":
+          description: Created person
+  /people/{personId}:
+    parameters:
+      - in: path
+        name: personId
+        required: true
+        schema: { type: string }
+    get:
+      tags: [People]
+      summary: Get person details
+      operationId: getPerson
+      responses:
+        "200":
+          description: A person
+    put:
+      tags: [People]
+      summary: Update a person
+      operationId: updatePerson
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/Person" }
+      responses:
+        "200":
+          description: Updated person
+    delete:
+      tags: [People]
+      summary: Delete a person
+      operationId: deletePerson
+      responses:
+        "204":
+          description: Deleted
+  /groups:
+    get:
+      tags: [Groups]
+      summary: List groups
+      operationId: listGroups
+      parameters:
+        - in: query
+          name: orgId
+          schema: { type: string }
+        - in: query
+          name: includeMembers
+          schema: { type: boolean }
+        - in: query
+          name: max
+          schema: { type: integer }
+      responses:
+        "200":
+          description: A list of groups
+    post:
+      tags: [Groups]
+      summary: Create a group
+      operationId: createGroup
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/Group" }
+      responses:
+        "200":
+          description: Created group
+  /groups/{groupId}:
+    parameters:
+      - in: path
+        name: groupId
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Groups]
+      summary: Get a group
+      operationId: getGroup
+      responses:
+        "200":
+          description: A group
+    patch:
+      tags: [Groups]
+      summary: Update a group
+      operationId: updateGroup
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/Group" }
+      responses:
+        "200":
+          description: Updated group
+    delete:
+      tags: [Groups]
+      summary: Delete a group
+      operationId: deleteGroup
+      responses:
+        "204":
+          description: Deleted
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: OAuth2-Access-Token
+  schemas:
+    Person:
+      type: object
+      properties:
+        id: { type: string }
+        emails:
+          type: array
+          items: { type: string, format: email }
+        displayName: { type: string }
+        firstName: { type: string }
+        lastName: { type: string }
+        orgId: { type: string }
+        userName: { type: string }
+        status: { type: string }
+        loginEnabled: { type: boolean }
+        roles:
+          type: array
+          items: { type: string }
+        licenses:
+          type: array
+          items: { type: string }
+    Group:
+      type: object
+      properties:
+        id: { type: string }
+        orgId: { type: string }
+        displayName: { type: string }
+        description: { type: string }
+        memberSize: { type: integer }
+        members:
+          type: array
+          items:
+            type: object
+            properties:
+              id: { type: string }
+              type: { type: string }
+              display: { type: string }
